@@ -34,11 +34,12 @@ for i in range(100):
     optimizer.zero_grad()
     output = my_model.train_model(x)
     loss = loss_function(output , y ) # y is the ground truth !!!
-    loss.backward()
-    optimizer.step()
+    loss.backward() # Calculate loss function !!!
+    optimizer.step() # Step learning process by an epoch !!!
     count = count+1
     print(f" epoch: {count} , loss function: {loss}")
 
 
 print("Model done training ") 
+
 
