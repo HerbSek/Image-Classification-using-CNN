@@ -1,0 +1,28 @@
+from PIL import Image  
+import PIL
+from PIL.Image import Image as img
+import numpy as np
+import os
+import torch
+from cnn import model_y
+
+
+image_path  = fr"C:\Users\Herbert\OneDrive\Desktop\Corn Disease\data\Blight\Corn_Blight (1).jpeg"
+
+
+def get_tensor(image_path):
+    image_path = Image.open(image_path)
+    img_size = (224,224)
+    resized_img = image_path.resize(img_size)
+    numpy_img = np.array(resized_img, dtype = np.float32)
+    torch_img = torch.tensor(numpy_img, dtype = torch.float32)
+    return torch_img
+
+
+
+
+
+if __name__ == "__main__":
+    output_tensor = get_tensor(image_path)
+    print(output_tensor.shape)
+
