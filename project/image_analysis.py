@@ -7,7 +7,7 @@ import torch
 from cnn import model_y
 
 
-image_path  = fr"C:\Users\Herbert\OneDrive\Desktop\Corn Disease\data\Blight\Corn_Blight (1).jpeg"
+image_path  = fr"C:\Users\Herbert\OneDrive\Desktop\Corn Disease\data\Blight\Corn_Blight (2).jpg"
 
 
 def get_tensor(image_path):
@@ -24,5 +24,11 @@ def get_tensor(image_path):
 
 if __name__ == "__main__":
     output_tensor = get_tensor(image_path)
-    print(output_tensor.shape)
-
+    output_tensor = output_tensor.unsqueeze(0)
+    # print(output_tensor)
+    output_tensor = output_tensor.permute([0,3,2,1])
+    print(f'Initial shape before CNN : {output_tensor.shape}')
+    # print(output_tensor.shape)
+    my_model = model_y()
+    input_data = my_model.calc_fcl(output_tensor)
+    print(f'Final shape to pass to Fully connected layer : {input_data.shape}')

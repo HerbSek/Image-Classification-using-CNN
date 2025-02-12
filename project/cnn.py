@@ -23,7 +23,7 @@ class model_y(nn.Module):
         )
 
     def calc_fcl(self,x):
-        return self.full_conv
+        return self.full_conv(x)
 
 
 
