@@ -23,9 +23,12 @@ class model_x(nn.Module):
 
 my_model = model_x()
     
-x = torch.randn(100,5)
+x = torch.randn(100,5)   
+
 y = torch.randint(0,2, (100,1), dtype = torch.float32)
-optimizer = optim.SGD(my_model.parameters(), lr = 0.01)
+
+
+optimizer = optim.SGD(my_model.parameters(), lr = 0.01) 
 loss_function = nn.MSELoss() 
 
 

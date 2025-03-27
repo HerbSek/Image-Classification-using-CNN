@@ -24,6 +24,5 @@ loss = loss_funct(y_pred, y) # predicted y value with the actual value .
 
 loss.backward() # calculates loss function
 
-
 optimizer.step() # updates parameters for next iteration !!!
 

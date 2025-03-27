@@ -5,10 +5,9 @@ import numpy as np
 import os
 import torch
 from cnn import model_y
+# Code to get fcl below 
 
-
-image_path  = fr"C:\Users\Herbert\OneDrive\Desktop\Corn Disease\data\Blight\Corn_Blight (2).jpg"
-
+image_path  = fr"C:\Users\Herbert\OneDrive\Desktop\Corn Disease\data\Blight\Corn_Blight (3).jpg"
 
 def get_tensor(image_path):
     image_path = Image.open(image_path)
@@ -17,9 +16,6 @@ def get_tensor(image_path):
     numpy_img = np.array(resized_img, dtype = np.float32)
     torch_img = torch.tensor(numpy_img, dtype = torch.float32)
     return torch_img
-
-
-
 
 
 if __name__ == "__main__":
