@@ -26,5 +26,5 @@ if __name__ == "__main__":
     print(f'Initial shape before CNN : {output_tensor.shape}')
     # print(output_tensor.shape)
     my_model = model_y()
-    input_data = my_model.calc_fcl(output_tensor)
+    input_data = my_model.full_conv(output_tensor)
     print(f'Final shape to pass to Fully connected layer : {input_data.shape}')

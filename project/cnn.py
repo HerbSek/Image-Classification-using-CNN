@@ -33,6 +33,9 @@ class model_y(nn.Module):
             nn.BatchNorm1d(128),
             nn.ReLU(),
             nn.Linear(128,20) # Output layer consists of '20' neurons 
+            nn.BatchNorm1d(20),
+            nn.ReLU(),
+            nn.Linear(20,4)  # Final layer (Output Layer) should be equal to the number of classes you have.
         )
 
     def forward(self, x):
